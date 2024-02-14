@@ -1,6 +1,6 @@
 # Project Template: Create a Docker image for a Java application
-[![Docker workflow status](https://github.com/miguno/java-docker-build-tutorial/actions/workflows/docker-image.yml/badge.svg)](https://github.com/miguno/java-docker-build-tutorial/actions/workflows/docker-image.yml)
-[![Maven workflow status](https://github.com/miguno/java-docker-build-tutorial/actions/workflows/maven.yml/badge.svg)](https://github.com/miguno/java-docker-build-tutorial/actions/workflows/maven.yml)
+[![Docker workflow status](https://github.com/delveccj/java-docker-build-tutorial/actions/workflows/docker-image.yml/badge.svg)](https://github.com/delveccj/java-docker-build-tutorial/actions/workflows/docker-image.yml)
+[![Maven workflow status](https://github.com/delveccj/java-docker-build-tutorial/actions/workflows/maven.yml/badge.svg)](https://github.com/delveccj/java-docker-build-tutorial/actions/workflows/maven.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 A template project to create a Docker image for a Java application.
@@ -43,25 +43,25 @@ the underlying `eclipse-temurin` image.
 
 ```shell
 # ***Creating an image may take a few minutes!***
-$ docker build --platform linux/x86_64/v8 -t miguno/java-docker-build-tutorial:latest .
+$ docker build --platform linux/x86_64/v8 -t delveccj/java-docker-build-tutorial:latest .
 
 # You can also build with the new BuildKit.
 # https://docs.docker.com/build/
-$ docker buildx build --platform linux/x86_64/v8 -t miguno/java-docker-build-tutorial:latest .
+$ docker buildx build --platform linux/x86_64/v8 -t delveccj/java-docker-build-tutorial:latest .
 ```
 
 Optionally, you can check the size of the generated Docker image:
 
 ```shell
-$ docker images miguno/java-docker-build-tutorial
+$ docker images delveccj/java-docker-build-tutorial
 REPOSITORY                          TAG       IMAGE ID       CREATED         SIZE
-miguno/java-docker-build-tutorial   latest    1403a608d055   4 minutes ago   176MB
+delveccj/java-docker-build-tutorial   latest    1403a608d055   4 minutes ago   176MB
 ```
 
 **Step 2:** Start a container for the Docker image.
 
 ```shell
-$ docker run -p 8123:8123 miguno/java-docker-build-tutorial:latest
+$ docker run -p 8123:8123 delveccj/java-docker-build-tutorial:latest
 ```
 
 **Step 3:** Open another terminal and access the example API endpoint of the
