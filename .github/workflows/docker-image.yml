@@ -18,3 +18,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Build the Docker image
       run: docker buildx build . --file Dockerfile --tag delveccj/java-docker-build-tutorial:$(date +%s)
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+    - name: Push Image to Docker Hub
+      run: docker push delveccj/java-docker-build-tutorial:$(date +%s)
