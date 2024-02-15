@@ -17,8 +17,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Build the Docker image
-      run: docker buildx build . --file Dockerfile --tag delveccjcanisius/java-docker-build-tutorial:v0.1
+      run: docker buildx build . --file Dockerfile --tag delveccjcanisius/java-docker-build-tutorial:v0.2
     - name: Login to Docker Hub
       run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
     - name: Push Image to Docker Hub
-      run: docker push delveccjcanisius/java-docker-build-tutorial:v0.1
+      run: docker push delveccjcanisius/java-docker-build-tutorial:v0.2
